@@ -17,7 +17,7 @@ int main()
         
         cout<<"\n***************************************************************************************************************"<<endl;
         cout<<"\nPES UNIVERSITY DATABASE\n";
-        cout<<"\n1.ADD A STUDENT\n2.ADD A TEACHER\n3.DISPLAY ALL STUDENTS RECORD\n4.DISPLAY ALL TEACHERS RECORD\n5.SEARCH & DISPLAY STUDENT RECORD BASED ON SRN\n6.SEARCH & DISPLAY TEACHER RECORD BASED ON ID\n7.SEARCH & MODIFY STUDENT RECORD\n8.SEARCH & MODIFY TEACHER RECORD\n9.DISPLAY ALL STUDENTS RECORD ACCD. SRN\n10.DISPLAY ALL STUDENTS RECORD ACCD. NAME\n11.DISPLAY ALL TEACHERS RECORD ACCD. ID\n12.DISPLAY ALL STUDENTS RECORD ACCD. NAME\n13.EXIT DATABASE\n\nENTER CHOICE: ";
+        cout<<"\n1.ADD A STUDENT\n2.ADD A TEACHER\n3.DISPLAY ALL STUDENTS RECORD\n4.DISPLAY ALL TEACHERS RECORD\n5.SEARCH & DISPLAY STUDENT RECORD BASED ON SRN\n6.SEARCH & DISPLAY TEACHER RECORD BASED ON ID\n7.SEARCH & MODIFY STUDENT RECORD\n8.SEARCH & MODIFY TEACHER RECORD\n9.DISPLAY ALL STUDENTS RECORD ACCD. SRN\n10.DISPLAY ALL STUDENTS RECORD ACCD. NAME\n11.DISPLAY ALL TEACHERS RECORD ACCD. ID\n12.DISPLAY ALL STUDENTS RECORD ACCD. NAME\n13.DELETE STUDENT RECORD\n14.DELETE TEACHER RECORD\n15.EXIT DATABASE\n\nENTER CHOICE: ";
         cin>>ch;
         cout<<"\n***************************************************************************************************************"<<endl;
         
@@ -109,13 +109,35 @@ int main()
         }
         else if(ch==11)
         {
-            tec_data[0].sort_srn(tec_data);
+            tec_data[0].sort_id(tec_data);
         }
         else if(ch==12)
         {
             tec_data[0].sort_name(tec_data);
         }
         else if(ch==13)
+        {
+            cout<<"\n***************************************************************************************************************"<<endl;
+            gets(d);
+            char s[15];
+            cout<<"Enter Student SRN to be searched & deleted: ";
+            gets(s);
+            
+            stu_data[0].remove_student(stu_data,s);
+            cout<<"\n***************************************************************************************************************"<<endl;
+        }
+        else if(ch==14)
+        {
+            cout<<"\n***************************************************************************************************************"<<endl;
+            gets(d);
+            char s[15];
+            cout<<"Enter Teacher ID to be searched & deleted: ";
+            gets(s);
+            
+            tec_data[0].remove_teacher(tec_data,s);
+            cout<<"\n***************************************************************************************************************"<<endl;
+        }
+        else if(ch==15)
         {
             k=0;
             cout<<"\nQuitting Database\n";
@@ -130,3 +152,4 @@ int main()
 
     
 }
+
